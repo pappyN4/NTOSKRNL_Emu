@@ -126,10 +126,10 @@ Storport was released since Windows 2003, but possible to backport Windows 7 ver
 ## Windows 8's USB3 driver for Windows XP ##
 USB3 driver from Windows 8 require WDF 1.11, use backported one.
 
-1) Get required files from Windows 8 (KB4534283/4556840, KB2984005, RTM ISO):
+1) Get required files from Windows 8 (x64 KB5040485, x86 KB2984005,KB5028232, x64/x86 RTM ISO):
 
        ucx01000.sys         v6.2.9200.22453
-       usbhub3.sys          v6.2.9200.21180
+       usbhub3.sys          v6.2.9200.21180 (x86), v6.2.9200.24610 (x64)
        usbxhci.sys          v6.2.9200.22099
        wpprecorder.sys      v6.2.9200.16384
        usbd.sys             v6.2.9200.20761
@@ -159,9 +159,9 @@ Needs files from Windows 8 USB3 driver (usbd_w8.sys and wpprecor.sys).
 
 Note that some motherboards may have a deadlock issue when trying to reboot with the UAS device connected.  Windows will turn off but not finish the reboot cycle.  If you Safe Remove the UAS device reboot will finish normally.  There is the option of using the deadlock patched version of the driver that fixes the issue.
 
-1) Get required files from Windows 8 (RTM ISO):
+1) Get required files from Windows 8 (x64 KB5040485, x86 RTM ISO):
 
-       uaspstor.sys      v6.2.9200.16384
+       uaspstor.sys      v6.2.9200.16384 (x86), v6.2.9200.24763 (x64)
 
 2) In uaspstor.sys change **security_cookie** to random value
 3) In uaspstor.sys replace string "**ntoskrnl.exe**" to "**ntoskrn8.sys**","**storport.sys**" to "**storpor8.sys**","**usbd.sys**" to "**usbd\_w8.sys**", "**WppRecorder.sys**" to "**WppRecor.sys**"   in import section
@@ -196,7 +196,7 @@ Take attention:
 Windows 8's STORAHCI + Windows 7's STORPORT may have **significal performance drop and high CPU usage**, there is no fix yet
 
 
-1) Get files from Windows 8 Updates (KB5006739):
+1) Get files from Windows 8 Updates (x64 KB5040485, x86 KB5028232):
 
        storahci.sys	v6.2.9200.20652
 
