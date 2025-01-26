@@ -2780,7 +2780,7 @@ PoFxIdleComponent_k8 (
 	
 	
 VOID
-PoFxSetDeviceIdleTimeout (
+PoFxSetDeviceIdleTimeout_k8 (
     POHANDLE Handle,
     ULONGLONG IdleTimeout
     ){
