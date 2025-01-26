@@ -13320,6 +13320,7 @@ k8_win8(   	PoFxActivateComponent,				12)
 k8_win8(   	PoFxIdleComponent,					12)
 k8_win8(   	MmMapIoSpaceEx,					    16)
 k8_win8(    memcmp,                             12)
+k8_win8(   	PoFxSetDeviceIdleTimeout,			12)
 
 #endif  // < Win8 x32/x64 Extender
 
